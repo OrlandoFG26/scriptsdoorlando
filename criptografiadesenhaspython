@@ -1,0 +1,32 @@
+#Criptografando uma senha de digitos.
+
+alfabeto = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r',
+            's','t','u','v','w','x','y','z']
+
+indaxe = alfabeto.index('a')
+rotacao = 3
+
+criptografia_indaxe  = (indaxe + rotacao) % len(alfabeto)
+#print(alfabeto[criptografia_indaxe])
+
+descriptografia_indaxe  = (criptografia_indaxe - rotacao) % len(alfabeto)
+#print(alfabeto[desccriptografia_indaxe])
+
+senha = input("Digite uma senha de 4 digitos: ")
+print("SENHA DIGITADA = ",senha)
+digito0 = (alfabeto.index(senha[0]) + r ) % len(alfabeto)
+digito1 = (alfabeto.index(senha[1]) + r ) % len(alfabeto)
+digito2 = (alfabeto.index(senha[2]) + r ) % len(alfabeto)
+digito3 = (alfabeto.index(senha[3]) + r ) % len(alfabeto)
+
+senha_c = alfabeto[digito0]+alfabeto[digito1]+alfabeto[digito2]+alfabeto[digito3]
+print("Sua senha criptagrafada = ",senha_c)
+
+
+digito0 = (alfabeto.index(senha_c[0]) - r ) % len(alfabeto)
+digito1 = (alfabeto.index(senha_c[1]) - r ) % len(alfabeto)
+digito2 = (alfabeto.index(senha_c[2]) - r ) % len(alfabeto)
+digito3 = (alfabeto.index(senha_c[3]) - r ) % len(alfabeto)
+
+senha_d = alfabeto[digito0]+alfabeto[digito1]+alfabeto[digito2]+alfabeto[digito3]
+print("Sua senha descriptagrafada = ",senha_d)
